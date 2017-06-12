@@ -15,8 +15,11 @@ import string
 
 
 #Connect to the MySQL database
+
 db = MySQLdb.connect("localhost","username","password","database")
 
+
+#The range is arbitrary. We scrape the first 10,000 users.
 for i in xrange(0,10000):
 	cursor = db.cursor()
 	page = requests.get("https://bitcointalk.org/index.php?action=profile;u={}".format(i))
